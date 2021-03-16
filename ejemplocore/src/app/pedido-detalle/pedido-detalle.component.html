@@ -1,0 +1,16 @@
+<table border="1px">
+    <tr>
+        <th>Cantidad</th>
+        <th>Producto</th>
+        <th>Precio</th>
+        <th>Total</th>
+        <th>opcion</th>
+    </tr>
+    <tr *ngFor="let producto of pedidodetalle; let posicion = index">
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.producto}}</td>
+        <td>{{producto.precio}}</td>
+        <td>{{producto.total}}</td>
+        <td><button (click)="eliminar(posicion)">eliminar</button></td>
+    </tr>
+</table>

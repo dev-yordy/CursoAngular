@@ -1,0 +1,24 @@
+<div class="container">
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Mayorista</th>
+            <th scope="col">Stock</th>
+            <th scope="col">Detalle</th>
+            <th scope="col">Imagen</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>{{articulo.nombre}}</td>
+            <td>{{articulo.precio | currency: 'USD.'}}</td>
+            <td>{{articulo.preciomayorista | currency: 'USD.'}}</td>
+            <td>{{articulo.stock}}</td>
+            <td>{{articulo.descripcion}}</td>
+            <td><img [src]="articulo.img" class="img-thumbnail"></td>
+          </tr>
+        </tbody>
+      </table>
+</div>

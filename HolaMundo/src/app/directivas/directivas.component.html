@@ -1,0 +1,36 @@
+<!--  *ngIf es una condicional, cuando algo se cumpla, lo va a mostrar
+
+    <div *ngIf="cargando == false">
+        <p>La Carga ha terminado</p>
+    </div>
+
+    <img *ngIf="cargando == true" src="https://cdn2.scratch.mit.edu/get_image/gallery/25620717_170x100.png" alt="">
+
+    <button (click)="Reanudar()" *ngIf="cargando == false">CargarDeNuevo</button>
+-->
+<!-- *ngFor nos ayuda hacer el recorrido de una lista de arreglos
+
+
+<div *ngFor="let list of lista">
+    <p>Nombre de trabajadores: {{list}} </p>
+</div>
+<div *ngFor="let producto of listaproductos" class="producto">
+    <p>Nombre del producto: {{producto.nombre}} </p>
+    <p>Stock: {{producto.stock}} </p>
+    <p>Fecha de vencimiento: {{producto.fechavence}} </p>
+    <p>Fabricante: {{producto.fabricante}} </p>
+</div>
+
+-->
+<div class="tap" [ngSwitch]="selection">
+    <button (click)="cambiarVentana('perfil')">Perfil</button>
+    <button (click)="cambiarVentana('puntos')">Puntos</button>
+    <button (click)="cambiarVentana('informacion')">Informacion</button>
+    
+    <div class="pestana">
+       <p *ngSwitchCase ="'perfil'">Este es el perfil</p>
+       <p *ngSwitchCase ="'puntos'">Estos son los puntos</p>
+       <p *ngSwitchCase ="'informacion'">Este es la informacion</p>
+       <p *ngSwitchDefault>Seleccione una pestaña</p>
+    </div>
+</div>

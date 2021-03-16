@@ -1,0 +1,55 @@
+<div class="container">
+    <form [formGroup]="formulariocreado" novalidate>
+          <div class="mb-3" class="form-group">
+            <label  class="form-label">Nombre</label>
+            <input  type="text" class="form-control" formControlName="nombre"> 
+               <div *ngIf = "formulariocreado.controls['nombre'].invalid && formulariocreado.controls['nombre'].dirty" class="alert alert-secondary" role="alert">
+              El nombre es necesario
+              </div>
+          </div>
+        <div class="mb-3" class="form-group">
+          <label  class="form-label">Email</label>
+          <input type="text" class="form-control" formControlName="correo"> 
+          <div *ngIf = "formulariocreado.controls['correo'].invalid && formulariocreado.controls['correo'].dirty">
+              <div  class="alert alert-secondary" role="alert">
+                  El correo es Requerido
+              </div>
+              <div class="alert alert-secondary" role="alert">
+                No tiene formato de correo!
+              </div>
+          </div>
+      </div>
+        <div class="mb-3">
+          <label  class="form-label">Password</label>
+          <input type="password" class="form-control" formControlName="contraseña">
+        </div>
+        <div class="alert alert-secondary" role="alert">
+            La contraseña es necesaria
+          </div>
+          <div class="alert alert-secondary" role="alert">
+            Almenos 8 caracteres
+        </div>
+        <button *ngIf="esNuevo" [disabled]="!formulariocreado.valid" (click)="agregar()" class="btn btn-primary">Add</button>
+        <button *ngIf="!esNuevo" [disabled]="!formulariocreado.valid" (click)="editar()" class="btn btn-danger">edit</button>
+
+      </form>
+     
+</div>
+<div class="container">
+  <table class="table table-dark table-borderless">
+    <thead>
+      <tr>
+        <th scope="col">Nombre</th>
+        <th scope="col">Correo</th>
+        <th>Opciones</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let user of listausuarios; let i = index">
+      <tr>
+        <td>{{user.nombre}} </td>
+        <td>{{user.correo}} </td>
+        <td><button class="btn btn-success" (click)="eliminar(i)">Eliminar</button><button class="btn btn-info" (click)="editarusuario(i)">DeseaEditar?</button></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

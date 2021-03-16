@@ -1,0 +1,28 @@
+<div class="container">
+<form action="">
+  <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" name="nombre" class="form-control" [(ngModel)]="cliente.nombre">
+  </div>
+  <div class="form-group">
+    <label for="apellido">Apellido</label>
+    <input type="text" name="apellido" class="form-control" [(ngModel)]="cliente.apellido">
+  </div>
+  <br>
+  <div class="form-group">
+    <label for="exelente">Exelente</label>
+    <select name="exelente" [(ngModel)]="cliente.exelente">
+      <option value="false">NO</option>
+      <option value="true">SI</option>
+    </select>
+  </div>
+  <br>
+  <button class="btn btn-primary" (click)="add()">Agregar</button>
+</form>
+
+<div class="card" *ngFor="let cliente of listcliente" >
+  <div class="card-body">
+    Datos: {{cliente.nombre}} {{cliente.apellido}} {{cliente.exelente}}
+  </div>
+</div>
+</div>

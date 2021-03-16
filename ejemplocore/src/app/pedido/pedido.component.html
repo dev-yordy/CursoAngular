@@ -1,0 +1,6 @@
+<div class="container">
+    <h6>Cliente: {{pedido.cliente}}</h6>
+    <h6>Direccion:  {{pedido.direccion}}</h6>
+</div>
+<button (click)="agregarproducto()">add</button>
+<app-pedido-detalle [pedidodetalle]="pedido.pedidodetalle" (seElimino)="elHijoElimina($event)"></app-pedido-detalle>

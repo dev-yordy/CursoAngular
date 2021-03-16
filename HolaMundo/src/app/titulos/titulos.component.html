@@ -1,0 +1,44 @@
+
+<h1>Hola bro, soy{{" " + nombre}}</h1>
+<h1>Y yo soy {{persona.nombre}}</h1>
+
+<img [src]="image" alt="">  <!--Para poder asignarle un valor a una etiqueta, 
+se tiene que hacer por medio de property binding [src]
+image, es una variable creada en un archivo.ts o Typescript-->
+
+<!-- Otro ejemplo con el input
+inputnew, es otra variable creado en un arucho.ts-->
+<input type="text" value="inputnew">
+<!--Utilizando property .. -->
+<input type="text" [value]="inputnew">
+
+<!--Two way Binding [ngModel]-->
+<input type="text" [(ngModel)]="texto">
+<p>{{texto}}</p>
+
+<label for="">
+ correo <input type="text" [(ngModel)]="correo">
+</label>
+<label for="">
+    Contraseña <input type="password" [(ngModel)]="pass">
+</label>
+<!--<button (click)="iniciar()">Iniciar</button> -->
+<h2>evento dobleclick</h2>
+<button (dblclick)="alerta()">Iniciar</button>
+<br>
+<br>
+<!--El ngModelChange hace que a medida que el usuario escribe se vaya actualizando los datos en tiempo real-->
+<label for="">
+    EscribeAlgo<input type="text" (ngModelChange)="escribemodelo()" [(ngModel)]="texto">
+</label>
+
+<!--Evento Focus-->
+<input type="text" (focusout)="colorfondo($event)">
+<br>
+<br>
+<label for="">
+    correo <input type="text" [(ngModel)]="correo">
+   </label>
+   <label for="">
+       Contraseña <input type="password" (keydown)="iniciar($event)" [(ngModel)]="pass">
+   </label>

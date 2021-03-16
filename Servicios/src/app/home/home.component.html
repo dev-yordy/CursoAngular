@@ -1,0 +1,22 @@
+<div class="container">
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">Titulo</th>
+            <th scope="col">Body</th>
+            <th scope="col">Opcions</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let lista of articulo">
+          <tr>
+            <td (click)="IrAlDetalle(lista)">ID:{{lista.id}}{{lista.title}}</td>
+            <td>{{lista.body}}</td>
+             <td>
+               <button class="btn btn-danger" (click)='borrar(lista.id)'>borrar</button>
+               <button class="btn btn-primary" (click)="update(lista)">actualizar</button>
+            </td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

@@ -1,0 +1,26 @@
+
+<div class="container">
+    <h2>Listado de Articulos</h2>
+    <!-- <div class="articulo" *ngFor="let articulo of listadearticulos">
+      <h5>Nombre: {{articulo.nombre}} </h5>
+      <h5>Precio: {{articulo.precio | currency: 'USD.'}} </h5> 
+      <p>Detalle: {{articulo.descripcion}} </p> 
+    </div>
+    -->
+    <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Precio</th>
+            <th scope="col">descripcion</th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let articulo of listadearticulos" class="table-active">
+          <tr>
+            <td> <a (click)="pasarparametro(articulo)">{{articulo.nombre}}</a> </td>
+            <td>{{articulo.precio | currency: 'USD.'}}</td>
+            <td>{{articulo.descripcion}}</td>
+          </tr>
+        </tbody>
+      </table>
+</div>
